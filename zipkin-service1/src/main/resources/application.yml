@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: zipkin-service1
+server:
+  port: 8888
+management:
+  tracing:
+    sampling:
+      probability: 1  #采样率默认0.1(10次只能有一次被记录)，值越大收集越及时
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+#      read-timeout: 10
+#      connect-timeout: 5
